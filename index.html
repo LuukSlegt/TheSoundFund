@@ -9,6 +9,7 @@
   <style>
     :root {
       --accent: #1e40af;
+      --light: #eef2ff;
       --text: #111;
       --bg: #fff;
       --section-bg: #f8f9fb;
@@ -61,7 +62,7 @@
     }
 
     .hero {
-      background: var(--section-bg);
+      background: var(--light);
       text-align: center;
       padding: 100px 20px 80px;
     }
@@ -148,7 +149,7 @@
   <header class="hero">
     <h1>Fuel your music career — without giving up control.</h1>
     <p>The SoundFund offers upfront cash to independent artists by investing in the master rights to tracks that are already streaming. You stay independent and keep earning — we just help accelerate your next step.</p>
-    <a class="cta" href="#contact">Get Funded</a>
+    <a class="cta" href="#get-started">Get Funded</a>
   </header>
 
   <section>
@@ -194,30 +195,27 @@
       <strong>Is this a loan?</strong>
       <p>Nope. This is a one-time investment. You don’t pay us back — we simply share in future streaming income.</p>
     </div>
-    <div class="faq-item">
-      <strong>Can I offer multiple tracks?</strong>
-      <p>Yes. We can evaluate bundles or individual tracks. You stay in control of what you offer.</p>
-    </div>
-    <div class="faq-item">
-      <strong>What happens if my track stops streaming?</strong>
-      <p>That’s our risk, not yours. You keep the upfront cash either way.</p>
-    </div>
-    <div class="faq-item">
-      <strong>What if I switch distributors?</strong>
-      <p>That’s no problem. We can adapt to your setup — our agreement stays intact.</p>
-    </div>
   </section>
 
-  <section id="contact">
-    <h2>Let’s Talk</h2>
-    <p>Ready to explore funding for your music? Fill out the form below or book a short call.</p>
+  <section id="get-started">
+    <h2>Start a Conversation or Apply for Funding</h2>
+
+    <h3>📅 Book a Call</h3>
+    <p>Let’s explore whether your music is a good fit for The SoundFund. In this 15-minute call, I’ll walk you through how we invest in master rights, how the valuation works, and what kind of offer you might expect based on your streaming history. No pressure — just clarity.<br><br>Looking forward to connecting!<br>— Luuk</p>
+    <a href="https://calendly.com/your-link" target="_blank" class="cta">Book an Intro Call</a>
+
+    <h3 style="margin-top:60px;">🧾 Prefer to Apply Now?</h3>
+    <p>We’ll review your music and reach out within a few days if we think there’s a fit.</p>
+
     <form action="https://formspree.io/f/xnqegzvj" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="_replyto" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" class="cta">Send Message</button>
+      <input type="text" name="artistName" placeholder="Artist Name (release name)" required>
+      <input type="url" name="spotify" placeholder="Spotify Profile Link" required>
+      <textarea name="tracks" placeholder="Track(s) You Want to Offer" required></textarea>
+      <input type="text" name="listeners" placeholder="Monthly Listener Estimate (optional)">
+      <input type="text" name="distributor" placeholder="Your Distributor (e.g. DistroKid, TuneCore)">
+      <textarea name="reason" placeholder="Why You’re Interested (optional)"></textarea>
+      <button type="submit" class="cta">Submit Application</button>
     </form>
-    <p style="margin-top:20px;">Or email us at: <a href="mailto:info@thesoundfund.com">info@thesoundfund.com</a></p>
   </section>
 
   <footer>

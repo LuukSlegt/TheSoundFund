@@ -27,6 +27,29 @@
       padding: 0;
       line-height: 1.75;
       scroll-behavior: smooth;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle at center, rgba(30, 64, 175, 0.05), transparent 70%);
+      z-index: 0;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      bottom: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle at center, rgba(30, 64, 175, 0.05), transparent 70%);
+      z-index: 0;
     }
 
     header, section {
@@ -36,6 +59,8 @@
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.8s ease;
+      position: relative;
+      z-index: 1;
     }
 
     header.show, section.show {
@@ -112,9 +137,11 @@
       padding: 20px;
       background: white;
       border-bottom: 1px solid #eee;
-      font-weight: 600;
-      font-size: 1.2rem;
+      font-weight: 700;
+      font-size: 1.6rem;
       text-align: center;
+      position: relative;
+      z-index: 2;
     }
 
     input, textarea {

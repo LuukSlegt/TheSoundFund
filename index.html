@@ -157,6 +157,25 @@
       font-family: inherit;
       font-size: 1rem;
     }
+
+    .lp-spinner {
+      width: 100px;
+      height: 100px;
+      margin: 60px auto 20px;
+      animation: spin 6s linear infinite;
+    }
+
+    .lp-spinner img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
@@ -211,6 +230,11 @@
     <p>The SoundFund gives artists upfront funding by investing in the master rights to tracks that are already streaming. No pressure to recoup. No control over future work. Just fair, transparent support — built to help great music fund itself, sustainably and independently.</p>
     <p>Our mission goes beyond just making deals — we’re here to rebalance the power between creators and capital, and to prove that fairness can scale.</p>
   </section>
+
+  <!-- 🎵 ROLLING LP SECTION -->
+  <div class="lp-spinner">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Vinyl_record_icon.svg/512px-Vinyl_record_icon.svg.png" alt="Rotating LP">
+  </div>
 
   <section class="section-alt">
     <h2>FAQ</h2>

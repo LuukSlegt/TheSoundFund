@@ -4,19 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The SoundFund</title>
-  <meta name="description" content="The SoundFund empowers independent artists with upfront funding in exchange for partial master rights — fair, transparent, and artist-first." />
-  <meta property="og:title" content="The SoundFund" />
-  <meta property="og:description" content="Upfront funding for independent artists — stay in control, keep earning." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1587813360616-c2735c9c7674?fit=crop&w=1200&q=80" />
-  <meta property="og:url" content="https://thesoundfund.com" />
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/727/727240.png" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%231e40af'/></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --accent: #1e40af;
       --text: #111;
       --bg: #fff;
-      --section-bg: #f9f9f9;
+      --section-bg: #f8f9fb;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -26,28 +25,55 @@
       margin: 0;
       padding: 0;
       line-height: 1.75;
+      scroll-behavior: smooth;
     }
 
-    header.hero {
-      background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?fit=crop&w=1600&q=80') no-repeat center center / cover;
-      color: white;
-      text-align: center;
-      padding: 140px 20px 100px;
+    header, section {
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
     }
 
-    header.hero h1 {
-      font-size: 3rem;
+    header.show, section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1, h2 {
       margin-bottom: 20px;
+      font-weight: 700;
+      line-height: 1.2;
     }
 
-    header.hero p {
-      font-size: 1.3rem;
-      max-width: 700px;
-      margin: 0 auto 30px;
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    p, li {
+      font-size: 1.1rem;
+    }
+
+    .hero {
+      background: var(--section-bg);
+      text-align: center;
+      padding: 100px 20px 80px;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #333;
     }
 
     .cta {
       display: inline-block;
+      margin-top: 30px;
       padding: 14px 28px;
       background: var(--accent);
       color: white;
@@ -55,40 +81,15 @@
       text-decoration: none;
       border-radius: 8px;
       font-size: 1rem;
+      transition: background 0.3s ease;
     }
 
-    section {
-      padding: 80px 20px;
-      max-width: 900px;
-      margin: auto;
+    .cta:hover {
+      background: #172c84;
     }
 
     .section-alt {
       background: var(--section-bg);
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    p, li {
-      font-size: 1.1rem;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .image-banner {
-      margin: 60px 0;
-      text-align: center;
-    }
-
-    .image-banner img {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     }
 
     .faq-item {
@@ -101,9 +102,49 @@
       background: var(--section-bg);
       font-size: 0.9rem;
     }
+
+    ol, ul {
+      padding-left: 20px;
+    }
+
+    nav {
+      padding: 20px;
+      background: white;
+      border-bottom: 1px solid #eee;
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
   </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('header, section');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
 </head>
 <body>
+  <nav>The SoundFund</nav>
+
   <header class="hero">
     <h1>Fuel your music career — without giving up control.</h1>
     <p>The SoundFund offers upfront cash to independent artists by investing in the master rights to tracks that are already streaming. You stay independent and keep earning — we just help accelerate your next step.</p>
@@ -120,10 +161,6 @@
     </ol>
   </section>
 
-  <div class="image-banner">
-    <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?fit=crop&w=1200&q=80" alt="Studio and streaming dashboard">
-  </div>
-
   <section class="section-alt">
     <h2>Why Artists Choose Us</h2>
     <ul>
@@ -134,10 +171,6 @@
     </ul>
     <p><em>Unlike label advances or predatory catalog buyers, we don’t take your future — we invest transparently in just a portion of the work you’ve already released.</em></p>
   </section>
-
-  <div class="image-banner">
-    <img src="https://images.unsplash.com/photo-1613545325268-195b7c978e77?fit=crop&w=1200&q=80" alt="Artist headphones in creative focus">
-  </div>
 
   <section>
     <h2>About The SoundFund</h2>
@@ -177,9 +210,14 @@
 
   <section id="contact">
     <h2>Let’s Talk</h2>
-    <p>Ready to explore funding for your music? You can book a short intro call or send us your info directly.</p>
-    <p><a href="https://calendly.com/your-link" class="cta" target="_blank">Schedule a Call</a></p>
-    <p>Or email us at: <a href="mailto:info@thesoundfund.com">info@thesoundfund.com</a></p>
+    <p>Ready to explore funding for your music? Fill out the form below or book a short call.</p>
+    <form action="https://formspree.io/f/xnqegzvj" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="cta">Send Message</button>
+    </form>
+    <p style="margin-top:20px;">Or email us at: <a href="mailto:info@thesoundfund.com">info@thesoundfund.com</a></p>
   </section>
 
   <footer>

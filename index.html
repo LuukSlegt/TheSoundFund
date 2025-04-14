@@ -30,26 +30,27 @@
       position: relative;
     }
 
-    body::before {
+    /* Background graphics */
+    body::before, body::after {
       content: "";
       position: fixed;
-      top: -200px;
-      left: -200px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle at center, rgba(30, 64, 175, 0.05), transparent 70%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(30,64,175,0.05) 0%, transparent 70%);
       z-index: 0;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      bottom: -200px;
-      right: -200px;
+    body::before {
+      top: -200px;
+      left: -200px;
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle at center, rgba(30, 64, 175, 0.05), transparent 70%);
-      z-index: 0;
+    }
+
+    body::after {
+      bottom: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
     }
 
     header, section {
@@ -182,7 +183,7 @@
   <section>
     <h2>How It Works</h2>
     <ol>
-      <li><strong>Test You choose the tracks</strong> — you decide what to offer (only existing, streaming songs).</li>
+      <li><strong>You choose the tracks</strong> — you decide what to offer (only existing, streaming songs).</li>
       <li><strong>We make you an offer</strong> — based on your actual streaming performance.</li>
       <li><strong>You get paid upfront</strong> — this is not a loan and there's nothing to recoup.</li>
       <li><strong>You keep earning</strong> — we only receive the share we bought; you keep the rest, forever.</li>

@@ -8,11 +8,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent: #1e40af;
+      --indigo: #1e40af;
+      --purple: #7c3aed;
+      --mint: #d1fae5;
       --light: #eef2ff;
-      --text: #111;
       --bg: #fff;
-      --section-bg: #f8f9fb;
+      --section-bg: #f9f9f9;
+      --text: #111;
     }
 
     * {
@@ -52,6 +54,17 @@
       height: 600px;
     }
 
+    nav {
+      padding: 20px;
+      background: white;
+      border-bottom: 1px solid #eee;
+      font-weight: 700;
+      font-size: 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
     header, section {
       padding: 80px 20px;
       max-width: 800px;
@@ -80,6 +93,7 @@
 
     h2 {
       font-size: 1.8rem;
+      color: var(--purple);
     }
 
     p, li {
@@ -87,9 +101,10 @@
     }
 
     .hero {
-      background: var(--light);
+      background: linear-gradient(to bottom, var(--light), var(--bg));
       text-align: center;
       padding: 100px 20px 80px;
+      border-bottom: 1px solid #eee;
     }
 
     .hero p {
@@ -101,7 +116,7 @@
       display: inline-block;
       margin-top: 30px;
       padding: 14px 28px;
-      background: var(--accent);
+      background: var(--indigo);
       color: white;
       font-weight: 600;
       text-decoration: none;
@@ -115,7 +130,7 @@
     }
 
     .section-alt {
-      background: var(--section-bg);
+      background: var(--mint);
     }
 
     .faq-item {
@@ -131,17 +146,6 @@
 
     ol, ul {
       padding-left: 20px;
-    }
-
-    nav {
-      padding: 20px;
-      background: white;
-      border-bottom: 1px solid #eee;
-      font-weight: 700;
-      font-size: 2rem; /* Bigger logo text */
-      text-align: center;
-      position: relative;
-      z-index: 2;
     }
 
     input, textarea {

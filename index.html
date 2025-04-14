@@ -4,10 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The SoundFund</title>
+  <meta name="description" content="The SoundFund empowers independent artists with upfront funding in exchange for partial master rights — fair, transparent, and artist-first." />
+  <meta property="og:title" content="The SoundFund" />
+  <meta property="og:description" content="Upfront funding for independent artists — stay in control, keep earning." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1587813360616-c2735c9c7674?fit=crop&w=1200&q=80" />
+  <meta property="og:url" content="https://thesoundfund.com" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/727/727240.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent: #1e40af; /* Indigo */
+      --accent: #1e40af;
       --text: #111;
       --bg: #fff;
       --section-bg: #f9f9f9;
@@ -22,44 +28,26 @@
       line-height: 1.75;
     }
 
-    header, section {
-      padding: 80px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h1, h2 {
-      margin-bottom: 20px;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-    }
-
-    p, li {
-      font-size: 1.1rem;
-    }
-
-    .hero {
-      background: var(--section-bg);
+    header.hero {
+      background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?fit=crop&w=1600&q=80') no-repeat center center / cover;
+      color: white;
       text-align: center;
-      padding: 100px 20px 80px;
+      padding: 140px 20px 100px;
     }
 
-    .hero p {
-      font-size: 1.25rem;
-      color: #333;
+    header.hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    header.hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
     }
 
     .cta {
       display: inline-block;
-      margin-top: 30px;
       padding: 14px 28px;
       background: var(--accent);
       color: white;
@@ -69,8 +57,38 @@
       font-size: 1rem;
     }
 
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
     .section-alt {
       background: var(--section-bg);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    p, li {
+      font-size: 1.1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .image-banner {
+      margin: 60px 0;
+      text-align: center;
+    }
+
+    .image-banner img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     }
 
     .faq-item {
@@ -82,10 +100,6 @@
       padding: 60px 20px;
       background: var(--section-bg);
       font-size: 0.9rem;
-    }
-
-    ol, ul {
-      padding-left: 20px;
     }
   </style>
 </head>
@@ -106,6 +120,10 @@
     </ol>
   </section>
 
+  <div class="image-banner">
+    <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?fit=crop&w=1200&q=80" alt="Studio and streaming dashboard">
+  </div>
+
   <section class="section-alt">
     <h2>Why Artists Choose Us</h2>
     <ul>
@@ -116,6 +134,10 @@
     </ul>
     <p><em>Unlike label advances or predatory catalog buyers, we don’t take your future — we invest transparently in just a portion of the work you’ve already released.</em></p>
   </section>
+
+  <div class="image-banner">
+    <img src="https://images.unsplash.com/photo-1613545325268-195b7c978e77?fit=crop&w=1200&q=80" alt="Artist headphones in creative focus">
+  </div>
 
   <section>
     <h2>About The SoundFund</h2>

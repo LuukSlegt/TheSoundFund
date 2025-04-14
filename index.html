@@ -4,83 +4,128 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The SoundFund</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --accent: #1e40af; /* Indigo */
+      --text: #111;
+      --bg: #fff;
+      --section-bg: #f9f9f9;
+    }
+
     body {
-      font-family: sans-serif;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
       margin: 0;
       padding: 0;
-      line-height: 1.6;
-      background: #ffffff;
-      color: #111;
+      line-height: 1.75;
     }
+
     header, section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       max-width: 800px;
       margin: auto;
     }
+
     h1, h2 {
       margin-bottom: 20px;
+      font-weight: 700;
+      line-height: 1.2;
     }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    p, li {
+      font-size: 1.1rem;
+    }
+
     .hero {
-      background: #f4f4f4;
+      background: var(--section-bg);
       text-align: center;
-      padding: 100px 20px;
+      padding: 100px 20px 80px;
     }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #333;
+    }
+
     .cta {
       display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #000;
-      color: #fff;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
+      font-size: 1rem;
     }
+
+    .section-alt {
+      background: var(--section-bg);
+    }
+
     .faq-item {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
+
     footer {
       text-align: center;
-      padding: 40px;
-      background: #f4f4f4;
+      padding: 60px 20px;
+      background: var(--section-bg);
+      font-size: 0.9rem;
+    }
+
+    ol, ul {
+      padding-left: 20px;
     }
   </style>
 </head>
 <body>
   <header class="hero">
     <h1>Fuel your music career — without giving up control.</h1>
-    <p>The SoundFund gives you upfront cash for songs already streaming, while you stay independent and keep earning.</p>
+    <p>The SoundFund offers upfront cash to independent artists by investing in the master rights to tracks that are already streaming. You stay independent and keep earning — we just help accelerate your next step.</p>
     <a class="cta" href="#contact">Get Funded</a>
   </header>
 
   <section>
     <h2>How It Works</h2>
     <ol>
-      <li><strong>You choose the tracks</strong> — you decide what to offer (only existing songs).</li>
-      <li><strong>We make you an offer</strong> — based on your streaming history.</li>
-      <li><strong>You get paid upfront</strong> — no loans, no repayment.</li>
-      <li><strong>You keep earning</strong> — you retain your share of all future royalties.</li>
+      <li><strong>You choose the tracks</strong> — you decide what to offer (only existing, streaming songs).</li>
+      <li><strong>We make you an offer</strong> — based on your actual streaming performance.</li>
+      <li><strong>You get paid upfront</strong> — this is not a loan and there's nothing to recoup.</li>
+      <li><strong>You keep earning</strong> — we only receive the share we bought; you keep the rest, forever.</li>
     </ol>
   </section>
 
-  <section>
+  <section class="section-alt">
     <h2>Why Artists Choose Us</h2>
     <ul>
-      <li>No creative control taken</li>
-      <li>You still earn your share — forever</li>
-      <li>Clear contract, fair terms</li>
-      <li>Built by someone who actually listens</li>
+      <li>No creative control taken — ever.</li>
+      <li>You keep earning your royalty share — permanently.</li>
+      <li>Clear contracts. No surprises. No hidden clauses.</li>
+      <li>We invest in your past — so you can create your future.</li>
     </ul>
+    <p><em>Unlike label advances or predatory catalog buyers, we don’t take your future — we invest transparently in just a portion of the work you’ve already released.</em></p>
   </section>
 
   <section>
     <h2>About The SoundFund</h2>
-    <p>The SoundFund was founded by Luuk Slegt to solve a simple but urgent problem in the music world: Independent artists were creating valuable work — but had no access to capital unless they gave up ownership, control, or both.</p>
+    <p>The SoundFund was founded by Luuk Slegt to solve a simple but urgent problem in the music world: independent artists were creating valuable work — but had no access to capital unless they gave up ownership, control, or both.</p>
     <p>We exist to change that.</p>
     <p>The SoundFund gives artists upfront funding by investing in the master rights to tracks that are already streaming. No pressure to recoup. No control over future work. Just fair, transparent support — built to help great music fund itself, sustainably and independently.</p>
     <p>Our mission goes beyond just making deals — we’re here to rebalance the power between creators and capital, and to prove that fairness can scale.</p>
   </section>
 
-  <section>
+  <section class="section-alt">
     <h2>FAQ</h2>
     <div class="faq-item">
       <strong>Do I lose control of my music?</strong>
@@ -88,23 +133,35 @@
     </div>
     <div class="faq-item">
       <strong>Do I still earn royalties?</strong>
-      <p>Yes. You keep your share of the royalties, forever.</p>
+      <p>Yes — you keep your share of the royalties, forever. We just receive the percentage we purchased.</p>
     </div>
     <div class="faq-item">
       <strong>Is this a loan?</strong>
-      <p>Nope. You don’t pay us back. We share in future streaming income.</p>
+      <p>Nope. This is a one-time investment. You don’t pay us back — we simply share in future streaming income.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Can I offer multiple tracks?</strong>
+      <p>Yes. We can evaluate bundles or individual tracks. You stay in control of what you offer.</p>
+    </div>
+    <div class="faq-item">
+      <strong>What happens if my track stops streaming?</strong>
+      <p>That’s our risk, not yours. You keep the upfront cash either way.</p>
+    </div>
+    <div class="faq-item">
+      <strong>What if I switch distributors?</strong>
+      <p>That’s no problem. We can adapt to your setup — our agreement stays intact.</p>
     </div>
   </section>
 
   <section id="contact">
     <h2>Let’s Talk</h2>
-    <p>Ready to explore funding for your music? Book a short call or send us your info.</p>
-    <p><a href="https://calendly.com/your-link" target="_blank">Schedule a Call</a></p>
+    <p>Ready to explore funding for your music? You can book a short intro call or send us your info directly.</p>
+    <p><a href="https://calendly.com/your-link" class="cta" target="_blank">Schedule a Call</a></p>
     <p>Or email us at: <a href="mailto:info@thesoundfund.com">info@thesoundfund.com</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 The SoundFund</p>
+    <p>&copy; 2025 The SoundFund. All rights reserved.</p>
   </footer>
 </body>
 </html>

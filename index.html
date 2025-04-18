@@ -4,207 +4,128 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The SoundFund</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%231e40af'/></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23d1f24b'/></svg>">
   <style>
     :root {
-      --indigo: #1e40af;
-      --purple: #7c3aed;
-      --mint: #d1fae5;
-      --light: #eef2ff;
-      --bg: #fff;
-      --section-bg: #f9f9f9;
+      --accent: #d1f24b;
       --text: #111;
+      --bg: #ffffff;
+      --muted: #f8f8f8;
+      --font: 'Inter', sans-serif;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
+      font-family: var(--font);
+      background-color: var(--bg);
       color: var(--text);
-      margin: 0;
-      padding: 0;
-      line-height: 1.75;
-      scroll-behavior: smooth;
-      position: relative;
-    }
-
-    body::before, body::after {
-      content: "";
-      position: fixed;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(30,64,175,0.12) 0%, transparent 70%);
-      z-index: 0;
-    }
-
-    body::before {
-      top: -200px;
-      left: -200px;
-      width: 500px;
-      height: 500px;
-    }
-
-    body::after {
-      bottom: -200px;
-      right: -200px;
-      width: 600px;
-      height: 600px;
+      line-height: 1.7;
     }
 
     nav {
-      padding: 20px;
-      background: white;
-      border-bottom: 1px solid #eee;
+      padding: 24px 40px;
       font-weight: 700;
-      font-size: 2rem;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    header, section {
-      padding: 80px 20px;
-      max-width: 800px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-      position: relative;
-      z-index: 1;
-    }
-
-    header.show, section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h1, h2 {
-      margin-bottom: 20px;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    h2 {
       font-size: 1.8rem;
-      color: var(--purple);
-    }
-
-    p, li {
-      font-size: 1.1rem;
+      background: var(--bg);
+      text-align: center;
+      border-bottom: 1px solid #eee;
     }
 
     .hero {
-      background: linear-gradient(to bottom, var(--light), var(--bg));
       text-align: center;
       padding: 100px 20px 80px;
-      border-bottom: 1px solid #eee;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
 
     .hero p {
       font-size: 1.25rem;
       color: #333;
+      margin-bottom: 40px;
     }
 
-    .cta {
-      display: inline-block;
-      margin-top: 30px;
+    .btn {
+      background: var(--accent);
+      color: #000;
       padding: 14px 28px;
-      background: var(--indigo);
-      color: white;
       font-weight: 600;
-      text-decoration: none;
-      border-radius: 8px;
       font-size: 1rem;
-      transition: background 0.3s ease;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .cta:hover {
-      background: #172c84;
+    .btn:hover {
+      background: #c3e641;
     }
 
-    .section-alt {
-      background: var(--mint);
+    section {
+      padding: 100px 20px;
+      max-width: 800px;
+      margin: auto;
     }
 
-    .faq-item {
-      margin-bottom: 30px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 60px 20px;
-      background: var(--section-bg);
-      font-size: 0.9rem;
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--text);
     }
 
     ol, ul {
+      margin-top: 10px;
       padding-left: 20px;
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-family: inherit;
-      font-size: 1rem;
+    .lp-hero {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      margin-bottom: -60px;
     }
 
-    .lp-large {
-      width: 200px;
-      height: 200px;
-      margin: 40px auto -40px;
-      animation: spin 6s linear infinite;
-    }
-
-    .lp-large img {
-      width: 100%;
-      height: 100%;
+    .lp-hero img {
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
+      animation: spin 6s linear infinite;
       opacity: 0.95;
     }
 
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
   </style>
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('header, section');
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-          }
-        });
-      }, {
-        threshold: 0.1
-      });
-      sections.forEach(section => observer.observe(section));
-    });
-  </script>
 </head>
 <body>
+
   <nav>The SoundFund</nav>
 
-  <header class="hero">
+  <section class="hero">
     <h1>Fuel your music career — without giving up control.</h1>
     <p>The SoundFund offers upfront cash to independent artists by investing in the master rights to tracks that are already streaming. You stay independent and keep earning — we just help accelerate your next step.</p>
-    <a class="cta" href="#get-started">Get Funded</a>
-  </header>
+    <a href="#get-started" class="btn">Get Funded</a>
+  </section>
 
-  <!-- 🎵 Grote LP boven "How It Works" -->
-  <div class="lp-large">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Vinyl_record_simple.svg/512px-Vinyl_record_simple.svg.png" alt="LP Record" />
+  <div class="lp-hero">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Vinyl_record_simple.svg/512px-Vinyl_record_simple.svg.png" alt="LP">
   </div>
 
   <section>
@@ -217,7 +138,7 @@
     </ol>
   </section>
 
-  <section class="section-alt">
+  <section style="background: var(--muted); border-radius: 20px;">
     <h2>Why Artists Choose Us</h2>
     <ul>
       <li>No creative control taken — ever.</li>
@@ -225,10 +146,9 @@
       <li>Clear contracts. No surprises. No hidden clauses.</li>
       <li>We invest in your past — so you can create your future.</li>
     </ul>
-    <p><em>Unlike label advances or predatory catalog buyers, we don’t take your future — we invest transparently in just a portion of the work you’ve already released.</em></p>
+    <p style="margin-top: 20px;"><em>Unlike label advances or predatory catalog buyers, we don’t take your future — we invest transparently in just a portion of the work you’ve already released.</em></p>
   </section>
-
-  <section>
+<section>
     <h2>About The SoundFund</h2>
     <p>The SoundFund was founded by Luuk Slegt to solve a simple but urgent problem in the music world: independent artists were creating valuable work — but had no access to capital unless they gave up ownership, control, or both.</p>
     <p>We exist to change that.</p>
@@ -236,19 +156,12 @@
     <p>Our mission goes beyond just making deals — we’re here to rebalance the power between creators and capital, and to prove that fairness can scale.</p>
   </section>
 
-  <section class="section-alt">
+  <section style="background: var(--muted); border-radius: 20px;">
     <h2>FAQ</h2>
-    <div class="faq-item">
-      <strong>Do I lose control of my music?</strong>
-      <p>No. You keep full creative control. We only take a share of the financial rights.</p>
-    </div>
-    <div class="faq-item">
-      <strong>Do I still earn royalties?</strong>
-      <p>Yes — you keep your share of the royalties, forever. We just receive the percentage we purchased.</p>
-    </div>
-    <div class="faq-item">
-      <strong>Is this a loan?</strong>
-      <p>Nope. This is a one-time investment. You don’t pay us back — we simply share in future streaming income.</p>
+    <div>
+      <p><strong>Do I lose control of my music?</strong><br>No. You keep full creative control. We only take a share of the financial rights.</p>
+      <p><strong>Do I still earn royalties?</strong><br>Yes — you keep your share of the royalties, forever. We just receive the percentage we purchased.</p>
+      <p><strong>Is this a loan?</strong><br>Nope. This is a one-time investment. You don’t pay us back — we simply share in future streaming income.</p>
     </div>
   </section>
 
@@ -257,24 +170,25 @@
 
     <h3>📅 Book a Call</h3>
     <p>Let’s explore whether your music is a good fit for The SoundFund. In this 15-minute call, I’ll walk you through how we invest in master rights, how the valuation works, and what kind of offer you might expect based on your streaming history. No pressure — just clarity.<br><br>Looking forward to connecting!<br>— Luuk</p>
-    <a href="https://calendly.com/your-link" target="_blank" class="cta">Book an Intro Call</a>
+    <a href="https://calendly.com/your-link" class="btn">Book an Intro Call</a>
 
     <h3 style="margin-top:60px;">📝 Prefer to Apply Now?</h3>
     <p>We’ll review your music and reach out within a few days if we think there’s a fit.</p>
 
-    <form action="https://formspree.io/f/xnqegzvj" method="POST">
+    <form action="https://formspree.io/f/xnqegzvj" method="POST" style="margin-top: 30px;">
       <input type="text" name="artistName" placeholder="Artist Name (release name)" required>
       <input type="url" name="spotify" placeholder="Spotify Profile Link" required>
       <textarea name="tracks" placeholder="Track(s) You Want to Offer" required></textarea>
       <input type="text" name="listeners" placeholder="Monthly Listener Estimate (optional)">
       <input type="text" name="distributor" placeholder="Your Distributor (e.g. DistroKid, TuneCore)">
       <textarea name="reason" placeholder="Why You’re Interested (optional)"></textarea>
-      <button type="submit" class="cta">Submit Application</button>
+      <button type="submit" class="btn" style="margin-top: 16px;">Submit Application</button>
     </form>
   </section>
 
-  <footer>
+  <footer style="text-align:center; padding: 60px 20px; font-size: 0.9rem; background: #fff; color: #666;">
     <p>&copy; 2025 The SoundFund. All rights reserved.</p>
   </footer>
+
 </body>
 </html>

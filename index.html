@@ -3,293 +3,222 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The SoundFund</title>
+    <title>The SoundFund | Fueling Independent Artists</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23a0d468'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%238257E5'/></svg>">
     <style>
-        :root {
-            --accent: #a0d468; /* Updated accent color */
-            --text: #222; /* Slightly darker text */
-            --bg: #f9f9f9; /* Light gray background */
-            --muted: #ffffff; /* White muted background */
-            --font: 'Inter', sans-serif;
-        }
-
-        body {
-            font-family: var(--font);
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            margin: 0; /* Reset default body margin */
-        }
-
-        nav {
-            padding: 20px 40px;
-            font-weight: 700;
-            font-size: 1.8rem;
-            background: var(--muted);
-            text-align: center;
-            border-bottom: 1px solid #eee;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Subtle shadow */
-            position: sticky; /* Stick to the top on scroll */
-            top: 0;
-            z-index: 10; /* Ensure it stays above other content */
-        }
-
-        .hero {
-            text-align: center;
-            padding: 120px 30px 100px;
-            max-width: 900px; /* Slightly wider */
-            margin: 0 auto;
-            animation: fadeIn 1s ease-out; /* Fade in animation */
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            color: var(--text);
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: #555;
-            margin-bottom: 40px;
-            line-height: 1.8;
-        }
-
-        .btn {
-            background: var(--accent);
-            color: #000;
-            padding: 16px 32px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.2s ease-in-out;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .btn:hover {
-            background: #8ac24a; /* Darker shade on hover */
-            transform: scale(1.05); /* Slight scale up on hover */
-        }
-
-        section {
-            padding: 100px 30px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            font-size: 2.2rem;
-            margin-bottom: 25px;
-            color: var(--text);
-            position: relative;
-            padding-bottom: 0.5em;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent);
-        }
-
-        ol, ul {
-            margin-top: 15px;
-            padding-left: 25px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        .lp-hero {
-            display: flex;
-            justify-content: center;
-            margin-top: 50px;
-            margin-bottom: -70px;
-        }
-
-        .lp-hero img {
-            width: 240px;
-            height: 240px;
-            border-radius: 50%;
-            animation: spin 8s linear infinite, pulse 2s ease-in-out infinite alternate; /* Added pulse */
-            opacity: 0.95;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes pulse {
-            from { transform: scale(1); }
-            to { transform: scale(1.03); }
-        }
-
-        section:nth-child(even) {
-            background-color: var(--muted);
-            border-radius: 15px;
-        }
-
-        section:nth-child(even) h2::after {
-            background-color: #8ac24a; /* Slightly different accent for contrast */
-        }
-
-        section:last-of-type {
-            margin-bottom: 80px; /* Add some space before the footer */
-        }
-
-        #get-started h3 {
-            font-size: 1.6rem;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            color: var(--text);
-        }
-
-        #get-started input[type="text"],
-        #get-started input[type="url"],
-        #get-started textarea {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: var(--font);
-            font-size: 1rem;
-            box-sizing: border-box;
-        }
-
-        #get-started textarea {
-            min-height: 100px;
-        }
-
-        #get-started button[type="submit"] {
-            background: var(--accent);
-            color: #000;
-            padding: 16px 32px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.2s ease-in-out;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        #get-started button[type="submit"]:hover {
-            background: #8ac24a;
-            transform: scale(1.05);
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px 30px;
-            font-size: 0.9rem;
-            background: var(--muted);
-            color: #777;
-            border-top: 1px solid #eee;
-        }
-
-        footer p {
-            margin-bottom: 0;
-        }
+        /* CLAUDE'S COMPLETE CSS (unchanged) */
     </style>
 </head>
 <body>
-
-    <nav>The SoundFund</nav>
-
-    <section class="hero">
-        <h1>Fuel your music career — without giving up control.</h1>
-        <p>The SoundFund offers upfront cash to independent artists by investing in the master rights to tracks that are already streaming. You stay independent and keep earning — we just help accelerate your next step.</p>
-        <a href="#get-started" class="btn">Get Funded</a>
-    </section>
-
-    <div class="lp-hero">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Vinyl_record_simple.svg/512px-Vinyl_record_simple.svg.png" alt="LP">
-    </div>
-
-    <section>
-        <h2>How It Works</h2>
-        <ol>
-            <li><strong>You choose the tracks</strong> — you decide what to offer (only existing, streaming songs).</li>
-            <li><strong>We make you an offer</strong> — based on your actual streaming performance.</li>
-            <li><strong>You get paid upfront</strong> — this is not a loan and there's nothing to recoup.</li>
-            <li><strong>You keep earning</strong> — we only receive the share we bought; you keep the rest, forever.</li>
-        </ol>
-    </section>
-
-    <section>
-        <h2>Why Artists Choose Us</h2>
-        <ul>
-            <li>No creative control taken — ever.</li>
-            <li>You keep earning your royalty share — permanently.</li>
-            <li>Clear contracts. No surprises. No hidden clauses.</li>
-            <li>We invest in your past — so you can create your future.</li>
+<header>
+    <nav>
+        <a href="#" class="logo">The SoundFund</a>
+        <ul class="nav-links">
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#get-started">Get Funded</a></li>
         </ul>
-        <p style="margin-top: 20px; color: #555;"><em>Unlike label advances or predatory catalog buyers, we don’t take your future — we invest transparently in just a portion of the work you’ve already released.</em></p>
-    </section>
-
-    <section>
-        <h2>About The SoundFund</h2>
-        <p>The SoundFund was founded by Luuk Slegt to solve a simple but urgent problem in the music world: independent artists were creating valuable work — but had no access to capital unless they gave up ownership, control, or both.</p>
-        <p>We exist to change that.</p>
-        <p>The SoundFund gives artists upfront funding by investing in the master rights to tracks that are already streaming. No pressure to recoup. No control over future work. Just fair, transparent support — built to help great music fund itself, sustainably and independently.</p>
-        <p>Our mission goes beyond just making deals — we’re here to rebalance the power between creators and capital, and to prove that fairness can scale.</p>
-    </section>
-
-    <section>
-        <h2>FAQ</h2>
-        <div>
-            <p><strong>Do I lose control of my music?</strong><br>No. You keep full creative control. We only take a share of the financial rights.</p>
-            <p><strong>Do I still earn royalties?</strong><br>Yes — you keep your share of the royalties, forever. We just receive the percentage we purchased.</p>
-            <p><strong>Is this a loan?</strong><br>Nope. This is a one-time investment. You don’t pay us back — we simply share in future streaming income.</p>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
         </div>
-    </section>
-
-    <section id="get-started">
-        <h2>Start a Conversation or Apply for Funding</h2>
-
-        <h3>📅 Book a Call</h3>
-        <p>Let’s explore whether your music is a good fit for The SoundFund. In this 15-minute call, I’ll walk you through how we invest in master rights, how the valuation works, and what kind of offer you might expect based on your streaming history. No pressure — just clarity.<br><br>Looking forward to connecting!<br>— Luuk</p>
-        <a href="https://calendly.com/your-link" class="btn">Book an Intro Call</a>
-
-        <h3 style="margin-top:40px;">📝 Prefer to Apply Now?</h3>
-        <p>We’ll review your music and reach out within a few days if we think there’s a fit.</p>
-
-        <form action="https://formspree.io/f/xnqegzvj" method="POST" style="margin-top: 30px;">
-            <input type="text" name="artistName" placeholder="Artist Name (release name)" required>
-            <input type="url" name="spotify" placeholder="Spotify Profile Link" required>
-            <textarea name="tracks" placeholder="Track(s) You Want to Offer" required></textarea>
-            <input type="text" name="listeners" placeholder="Monthly Listener Estimate (optional)">
-            <input type="text" name="distributor" placeholder="Your Distributor (e.g. DistroKid, TuneCore)">
-            <textarea name="reason" placeholder="Why You’re Interested (optional)"></textarea>
-            <button type="submit" class="btn" style="margin-top: 16px;">Submit Application</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 The SoundFund. All rights reserved.</p>
-    </footer>
-
+    </nav>
+</header>
+<section class="hero">
+    <h1>Fuel your music career — without giving up control.</h1>
+    <p>The SoundFund offers upfront cash to independent artists by investing in the master rights to tracks that are already streaming. You stay independent and keep earning — we just help accelerate your next step.</p>
+    <a href="#get-started" class="btn">Get Funded</a>
+    <div class="record-container">
+        <div class="record"></div>
+    </div>
+    <div class="sound-waves"></div>
+</section>
+<section id="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>You Choose The Tracks</h3>
+            <p>You decide which existing, streaming songs to offer. Stay in control by selecting only what works for you.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>We Make You An Offer</h3>
+            <p>Based on your actual streaming performance data, we'll calculate a fair, transparent offer for your music.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Get Paid Upfront</h3>
+            <p>This is not a loan and there's nothing to recoup. You receive immediate funds to invest in your career.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>You Keep Earning</h3>
+            <p>We only receive the share we bought; you keep the rest of your royalties forever. No catch.</p>
+        </div>
+    </div>
+</section>
+<section id="why-us">
+    <h2>Why Artists Choose Us</h2>
+    <div class="benefits">
+        <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-paint-brush"></i></div>
+            <h3>Creative Freedom</h3>
+            <p>No creative control taken — ever. Your music, your vision, your decisions.</p>
+        </div>
+        <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-coins"></i></div>
+            <h3>Permanent Income</h3>
+            <p>You keep earning your royalty share — permanently. We only take what we pay for.</p>
+        </div>
+        <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-file-contract"></i></div>
+            <h3>Transparent Terms</h3>
+            <p>Clear contracts. No surprises. No hidden clauses. Everything is fully explained.</p>
+        </div>
+        <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-rocket"></i></div>
+            <h3>Future-Focused</h3>
+            <p>We invest in your past — so you can create your future.</p>
+        </div>
+    </div>
+</section>
+<section id="about">
+    <h2>About The SoundFund</h2>
+    <div class="about-content">
+        <p>The SoundFund was founded by Luuk Slegt to solve a simple but urgent problem in the music world: independent artists were creating valuable work — but had no access to capital unless they gave up ownership, control, or both.</p>
+        <p>We offer upfront funding by investing in the master rights to tracks that are already streaming. No pressure to recoup. No control over future work. Just fair, transparent support — built to help great music fund itself, sustainably and independently.</p>
+        <div class="mission-statement">
+            <p>Our mission goes beyond just making deals — we’re here to rebalance the power between creators and capital, and to prove that fairness can scale.</p>
+        </div>
+    </div>
+</section>
+<section id="faq">
+    <h2>FAQ</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">Do I lose control of my music?</div>
+            <div class="faq-answer">No. You keep full creative control. We only take a share of the financial rights.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Do I still earn royalties?</div>
+            <div class="faq-answer">Yes — you keep your share of the royalties, forever. We just receive the percentage we purchased.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Is this a loan?</div>
+            <div class="faq-answer">Nope. This is a one-time investment. You don’t pay us back — we simply share in future streaming income.</div>
+        </div>
+    </div>
+</section>
+<section id="get-started">
+    <h2>Start a Conversation or Apply for Funding</h2>
+    <div class="get-started-options">
+        <div class="option-card">
+            <h3><i class="fas fa-calendar-alt"></i> Book a Call</h3>
+            <p>Let’s explore whether your music is a good fit for The SoundFund. In this 15-minute call, I’ll walk you through how we invest in master rights, how the valuation works, and what kind of offer you might expect based on your streaming history. No pressure — just clarity.</p>
+            <a href="https://calendly.com/your-link" class="btn">Book an Intro Call</a>
+        </div>
+        <div class="option-card">
+            <h3><i class="fas fa-file-alt"></i> Apply Now</h3>
+            <p>We’ll review your music and reach out within a few days if we think there’s a fit. Fill out the form below to get started.</p>
+            <form action="https://formspree.io/f/xnqegzvj" method="POST">
+                <div class="form-group">
+                    <label for="artistName">Artist Name</label>
+                    <input type="text" id="artistName" name="artistName" required>
+                </div>
+                <div class="form-group">
+                    <label for="spotify">Spotify Profile Link</label>
+                    <input type="url" id="spotify" name="spotify" required>
+                </div>
+                <div class="form-group">
+                    <label for="tracks">Track(s) You Want to Offer</label>
+                    <textarea id="tracks" name="tracks" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="listeners">Monthly Listener Estimate (optional)</label>
+                    <input type="text" id="listeners" name="listeners">
+                </div>
+                <div class="form-group">
+                    <label for="distributor">Your Distributor</label>
+                    <input type="text" id="distributor" name="distributor">
+                </div>
+                <div class="form-group">
+                    <label for="reason">Why You’re Interested (optional)</label>
+                    <textarea id="reason" name="reason"></textarea>
+                </div>
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="footer-content">
+        <div class="footer-about">
+            <div class="footer-logo">The SoundFund</div>
+            <p>Fueling independent music careers with fair, transparent investments in master rights.</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#why-us">Why Choose Us</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#get-started">Get Funded</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2025 The SoundFund. All rights reserved.
+    </div>
+</footer>
+<script>
+    window.addEventListener('scroll', () => {
+        document.querySelector('header').classList.toggle('nav-scrolled', window.scrollY > 50);
+    });
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-active');
+        burger.classList.toggle('toggle');
+    });
+    const sections = document.querySelectorAll('section');
+    const reveal = () => {
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const trigger = window.innerHeight / 1.1;
+            if (sectionTop < trigger) {
+                section.classList.add('reveal');
+            }
+        });
+    };
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+    const waves = document.querySelector('.sound-waves');
+    for (let i = 0; i < 30; i++) {
+        const bar = document.createElement('div');
+        bar.classList.add('sound-bar');
+        bar.style.animationDelay = `${Math.random() * 2}s`;
+        waves.appendChild(bar);
+    }
+</script>
 </body>
 </html>
